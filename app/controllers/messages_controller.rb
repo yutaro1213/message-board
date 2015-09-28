@@ -1,8 +1,9 @@
 class MessagesController < ApplicationController
   def index
-    # Messageを全て取得する。
-    @messages = Message.all
+   # Messageを全て取得する。
+   @messages=Message.all
   end
+  
   def create
     @message = Message.new(message_params)
     @message.save
@@ -13,5 +14,5 @@ class MessagesController < ApplicationController
   def message_params
     params.require(:message).permit(:name, :body)
   end
-
- end
+  
+  end
