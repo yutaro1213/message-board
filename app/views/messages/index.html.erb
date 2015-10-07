@@ -4,6 +4,7 @@
   </div>
     
   <div class="panel-body">
+    
     <% @messages.each do |message| %>
       <span class="label label-info"><%= message.name %></span>
       <%= message.body %>
@@ -11,6 +12,10 @@
     <% end %>
   </div>
 </div>
+
+<% #部分テンプレートを読み込んでいる %>
+
+<%= render 'form' %>
 
 <%= form_for(Message.new, :html => { :class => "message_new form-horizontal" }) do |f| %>
   
