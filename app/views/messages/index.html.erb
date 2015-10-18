@@ -25,34 +25,3 @@
 <% #部分テンプレートを読み込んでいる %>
 
 <%= render 'form' %>
-
-<%= form_for(Message.new, :html => { :class => "message_new form-horizontal" }) do |f| %>
-  
-  <% if @message.errors.present? %>
-    <div class="alert alert-danger">
-      <%= alert %>
-      <ul>
-        <% @message.errors.full_messages.each do |full_message| %>
-          <li>
-            <%= full_message %>
-          </li>
-        <% end %> 
-      </ul>
-    </div>
-  <% end %>
-  
-  <div class="form-group">
-    <div class="col-md-4">
-      <label class="control-label">名前</label>
-     <%= f.text_field :name, class: "form-control"  %> 
-    </div>
-  </div>
-  
-  <div class="form-group">
-    <div class="col-md-4">
-      <label class="control-label">内容</label>
-      <%= f.text_area :body, :size=>"40×2", :class => "form-control"  %>
-    </div>
-  </div>
-  <%= f.submit class: "btn btn-sm btn-primary" %>
-<% end %>
