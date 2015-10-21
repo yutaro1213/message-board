@@ -1,4 +1,4 @@
-<%= form_for(Message.new, :html => { :class => "message_new form-horizontal" }) do |f| %>
+<%= form_for(@message, :html => { :class => "message_new form-horizontal" }) do |f| %>
   
   <% if @message.errors.present? %>
     <div class="alert alert-danger">
